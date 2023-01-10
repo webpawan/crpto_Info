@@ -1,0 +1,31 @@
+/* base colors  */
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+:root{
+    --grey : #EEEEEE;
+    --teal : #4ECCA3;
+    --dark :#232931;
+    --light-dark :#393E46;
+}
+
+.bg-light{
+    background-color: var(--grey) !important;
+}
+
+.line{
+    border-bottom: 2px solid #393E46;
+}
+
+.heading{
+    font-family: 'Playfair Display', serif;   
+}
+
+
+/* cryptocurrencies  */
+
+.img_container{
+    height: 50px;
+}
