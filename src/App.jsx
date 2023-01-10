@@ -1,13 +1,21 @@
 import React from 'react'
-import HomePage from './components/HomePage'
-
+import {Route,Routes } from 'react-router-dom'
+import Cryptocurrencies from './components/Cryptocurrencies';
+import HomePage from "./components/HomePage";  
 
 const App = () => {
  
 
   return (
     <>
-    <HomePage/>
+    
+    
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/cryptocurrencies' element={<Cryptocurrencies/>}/>
+      </Routes>
+    
+    {/* <HomePage/> */}
     
     </>
   )

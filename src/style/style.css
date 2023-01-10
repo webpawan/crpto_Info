@@ -29,3 +29,23 @@ body{
 .img_container{
     height: 50px;
 }
+
+.MyCrypto_btn{
+   
+text-decoration: none;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.358);
+background-color: white;
+font-weight: bold;
+transform: translateX(-2px);
+transition: all .2s;
+}
+.MyCrypto_btn:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.319);
+    transform: translateX(0px);
+}
+
+.MyCrypto_btn:active , .MyCrypto_btn:target{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
+    transform: translateX(2px);
+    
+}
