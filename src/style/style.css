@@ -11,6 +11,31 @@ body{
     --light-dark :#393E46;
 }
 
+.navbar{
+    border-bottom: 2px solid #150050;
+    color: white !important;
+}
+.navbar-brand{
+    color: #FB2576 !important;
+}
+
+.nav-link{
+    color: white;
+}
+
+
+.loading{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100000;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
 hr{
   background-color: #FB2576 !important;
   height: 3px;  

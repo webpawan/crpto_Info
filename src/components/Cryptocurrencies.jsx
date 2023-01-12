@@ -17,26 +17,28 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filterData);
   }, [cryptosList, searchTerm]);
 
-// animation strt---
+  // animation strt---
 
-const x = useMotionValue(0);
-const y = useMotionValue(0);
-const rotateX = useTransform(y ,[-100,100],[30,-30])
-const rotateY = useTransform(x ,[-100,100],[-30,30])
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
-const myVariants ={
-hidden: {opacity:0},
-show: {
-  opacity:1,
-  transition:{
-    staggerChildren:2.0
+  const myVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 2.0,
+      },
+    },
+  };
+
+  // animation end -----
+
+  if (isFetching) {
+    return <div className="loading display-1">Loading...</div>
   }
-}
-}
-
-// animation end -----
-
-  if (isFetching) return "loading..";
 
   return (
     <>
@@ -51,20 +53,25 @@ show: {
       )}
 
       <div className="container-fluid  ">
-        <motion.div variants={myVariants} initial="hidden" animate="show" className="row mx-auto">
+        <motion.div
+          variants={myVariants}
+          initial="hidden"
+          animate="show"
+          className="row mx-auto"
+        >
           {cryptos?.map((data) => {
             return (
               <motion.div
                 className="col-11 col-sm-6 col-md-4 col-lg-3 mx-auto m-1"
                 key={data.uuid}
-                style={{x,y,rotateX,rotateY,z:100}}
+                style={{ x, y, rotateX, rotateY, z: 100 }}
                 drag
                 dragElastic={0.18}
               >
                 <motion.div
-                
-                // dragConstraints={{top:10,left:10,right:10,bottom:0}}
-                className={`card p-2 text-light`}>
+                  // dragConstraints={{top:10,left:10,right:10,bottom:0}}
+                  className={`card p-2 text-light`}
+                >
                   <div className="d-flex align-items-center justify-content-between ">
                     <h2>#{data.rank}</h2>
                     <blockquote className="blockquote text-center">
@@ -74,7 +81,12 @@ show: {
                       </footer>
                     </blockquote>
 
-                    <motion.img src={data.iconUrl} alt="" className="img_container"  style={{x,y,rotateX,rotateY,z:10000}}/>
+                    <motion.img
+                      src={data.iconUrl}
+                      alt=""
+                      className="img_container"
+                      style={{ x, y, rotateX, rotateY, z: 10000 }}
+                    />
                   </div>
 
                   <div

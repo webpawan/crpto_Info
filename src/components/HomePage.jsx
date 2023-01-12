@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
+
 const HomePage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
 
@@ -14,7 +16,7 @@ const HomePage = () => {
   const globalStats = data?.data?.stats;
   // console.log(globalStats);
   if (isFetching) {
-    return <h1> loading...</h1>;
+    return <div className="loading display-1">Loading...</div>;
   }
 
   const {  totalCoins, totalExchanges, totalMarketCap } = globalStats;

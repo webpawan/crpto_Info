@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
@@ -10,11 +11,16 @@ const News = ({ simplified }) => {
   });
   const { data } = useGetCryptosQuery(10);
   if (!cryptoNews?.value) {
-    return <h1>loading..</h1>;
+    return <div className="loading display-1">Loading...</div>;
   }
+
+
 
   return (
     <>
+    
+
+      <div  className="container-fluid mx-auto">
       {!simplified && (
         <div className=" mx-auto text-center m-3">
           <select
@@ -34,13 +40,12 @@ const News = ({ simplified }) => {
           </select>
         </div>
       )}
-
-      <div className="container-fluid mx-auto">
-        <div className="row">
+        <motion.div initial={{opacity:0}} animate={{opacity:1,transition:{duration:.5,staggerChildren:.2}}}  className="row">
           {cryptoNews?.value?.map((data, index) => {
             console.log();
             return (
-              <div
+              <motion.div
+              initial={{opacity:0,translateY:-50}} animate={{opacity:1,translateY:0}} transition={{duration:.5}}
                 key={index}
                 className="col-11 col-sm-6 col-md-4 col-lg-3 mx-auto m-1"
               >
@@ -80,10 +85,10 @@ const News = ({ simplified }) => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </>
   );
