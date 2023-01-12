@@ -1,18 +1,27 @@
 /* base colors  */
 body{
     font-family: 'Roboto Condensed', sans-serif;
-    
+    background:linear-gradient(200deg,#3F0071,#150050) ;
 }
 
 :root{
-    --grey : #EEEEEE;
-    --teal : #4ECCA3;
-    --dark :#232931;
+    --blue : #150050;
+    --purpal : #3F0071;
+    --red :#FB2576;
     --light-dark :#393E46;
+}
+
+hr{
+  background-color: #FB2576 !important;
+  height: 3px;  
 }
 
 .bg-light{
     background-color: var(--grey) !important;
+}
+
+.bg-teal{
+    background-color: #393E46;
 }
 
 .line{
@@ -21,13 +30,23 @@ body{
 
 .heading{
     font-family: 'Playfair Display', serif;   
+    
 }
 
 
 /* cryptocurrencies  */
 
+.card{
+    background-color: #0c002d93;
+    box-shadow: 5px 5px 10px #15005084;
+    color: white;
+}
+
 .img_container{
     height: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.426);
+    top: 10px;
+    left: 10px;
 }
 
 .MyCrypto_btn{
@@ -48,4 +67,34 @@ transition: all .2s;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
     transform: translateX(2px);
     
+}
+
+
+/* news  */
+
+
+.mySelect{
+    padding: 10px;
+    border: none;
+    background: white;
+
+    color: #FB2576;
+    border-bottom: 2px solid #3F0071;
+    transition: all 1s;
+}
+.mySelect:optional{
+    background-color: #15005044;
+}
+
+.mySelect select{
+    display: none;
+    color: white;
+    border: none;
+}
+
+.mySelect:active,.mySelect:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #150050;
+
 }
